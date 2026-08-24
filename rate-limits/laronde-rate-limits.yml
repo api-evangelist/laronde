@@ -1,0 +1,15 @@
+generated: '2026-08-23'
+method: searched
+source: https://www.sail.bio/
+limit_count: 0
+limits: []
+headers: []
+note: >-
+  Not applicable rather than merely undocumented. Sail Biomedicines publishes no API, so there is
+  no rate limit, window, burst allowance, exhaustion status code or RateLimit-* / X-RateLimit-* /
+  Retry-After response header to record. Searched the full www.sail.bio sitemap on 2026-08-23 and
+  probed the host for a developer, documentation or API-reference surface; every candidate path
+  returned 404 and no api./docs./developer. subdomain resolves. The site's only rate-related
+  published signal is `Crawl-delay: 10` in https://www.sail.bio/robots.txt (HTTP 200), which is a
+  crawler courtesy directive for the marketing site, not an API rate limit, and so is recorded in
+  this note rather than as a limit entry.

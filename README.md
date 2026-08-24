@@ -64,5 +64,48 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Sail Biomedicines is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/laronde_stock/
+Sail Biomedicines is a Cambridge, Massachusetts preclinical biotechnology company formed in
+October 2023, when Flagship Pioneering merged **Laronde** (the legacy slug this repository is
+filed under) and **Senda Biosciences**. It combines Laronde's Endless RNA (eRNA) circular-RNA
+platform with Senda's programmable nanoparticle delivery chemistry and applies generative AI to
+the combined dataset, targeting in vivo CAR-T for autoimmune disease. In July 2026 Johnson &
+Johnson committed $785M up front plus up to $140M in milestones and took an exclusive option to
+acquire the company for a further $2.58B.
+
+## No API surface
+
+Sail Biomedicines sells therapeutics, not software. Probed 2026-08-23, it publishes no API, no
+SDK, no developer portal and no machine-readable specification:
+
+- `www.sail.bio` is a 14-page WordPress marketing site on WP Engine. Every contract-discovery path
+  — `/openapi.json`, `/openapi.yaml`, `/swagger.json`, `/v1/openapi.json`, `/api-docs`, `/docs`,
+  `/redoc`, `/graphql`, `/llms.txt` — returns 404, as does every `/.well-known/` path including
+  `agent-card.json` and `agent.json`. A random control path under `/.well-known/` returns the same
+  404, so the host is not a soft-200 catch-all.
+- `api.`, `docs.`, `dev.`, `developer.`, `data.`, `platform.`, `mcp.`, `app.`, `portal.`, `ir.` and
+  `investors.sail.bio` are all NXDOMAIN.
+- No first-party package exists on npm, PyPI, RubyGems or crates.io, and no GitHub organization
+  was tied to the company.
+- The one machine-readable surface on the domain is the stock WordPress core REST API at
+  `/wp-json/` — the CMS behind a marketing site, not a product API, and not catalogued as a
+  contract here.
+
+Two neighbouring domains are recorded but excluded: `laronde.bio` (the pre-merger domain — still
+resolves, but the TLS handshake fails) and `laronde.com` (a French-language site belonging to an
+unrelated business).
+
+## Artifacts
+
+| Path | What it holds |
+|---|---|
+| `apis.yml` | APIs.json profile — identity, tags, links, coverage |
+| `well-known/laronde-well-known.yml` | `/.well-known/` probe record (all misses) |
+| `security/laronde-domain-security.yml` | TLS / HSTS / DNSSEC / CAA / SPF / DMARC probe |
+| `packages/laronde-packages.yml` | Registry search — no first-party packages |
+| `plans/laronde-plans-pricing.yml` | No API plans published |
+| `rate-limits/laronde-rate-limits.yml` | No API rate limits published |
+| `llms/laronde-llms.txt` | Generated `llms.txt` profile (not published by the company) |
+
+- Website: https://www.sail.bio/
+- Flagship Pioneering profile: https://www.flagshippioneering.com/companies/sail-biomedicines
+- Secondary-market listing this entry was harvested from: https://forgeglobal.com/laronde_stock/

@@ -1,0 +1,117 @@
+generated: '2026-08-23'
+method: probed
+source: live HTTP probes of www.sail.bio and sail.bio (Sail Biomedicines, formerly Laronde)
+hit_count: 0
+note: >-
+  No /.well-known document is served by any Sail Biomedicines host, so NO WellKnown and NO
+  SecurityTxt pointer is wired — this file records an absence, not a presence. www.sail.bio is a
+  WordPress site on WP Engine and answers honestly: /.well-known/security.txt returns a 548-byte
+  nginx 404 from the edge, and every other /.well-known/* path returns the site's own 48,242-byte
+  WordPress 404 template. A randomly-named control path under /.well-known/ returned the identical
+  404, confirming the host is not a soft-200 catch-all. The apex sail.bio 301s to www for every
+  path except security.txt, which it 404s directly. The only machine-readable surface on the domain
+  is the stock WordPress core REST API at https://www.sail.bio/wp-json/ (HTTP 200, 252 routes
+  across 15 namespaces, all of them WordPress core, Yoast SEO, FileBird, WP Engine and
+  Pattern Manager plugin routes). That is the CMS behind a marketing site, not an API this company
+  publishes as a product, so it is recorded here as an observation and is NOT wired as a contract.
+hosts:
+- host: https://www.sail.bio
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    content_type: text/html
+  - path: /.well-known/openid-configuration
+    status: 404
+    content_type: text/html
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    content_type: text/html
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    content_type: text/html
+  - path: /.well-known/api-catalog
+    status: 404
+    content_type: text/html
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/agent-card.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/agent.json
+    status: 404
+    content_type: text/html
+- host: https://sail.bio
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    content_type: text/html
+  - path: /.well-known/openid-configuration
+    status: 301
+    content_type: text/html
+    note: apex redirects to https://www.sail.bio/
+  - path: /.well-known/agent-card.json
+    status: 301
+    content_type: text/html
+    note: apex redirects to https://www.sail.bio/
+  - path: /.well-known/agent.json
+    status: 301
+    content_type: text/html
+    note: apex redirects to https://www.sail.bio/
+soft_404_control:
+  url: https://www.sail.bio/.well-known/apievangelist-soft404-control-10090
+  status: 404
+  bytes: 48242
+  note: >-
+    Identical status and byte count to the other /.well-known/* misses, so the host is a genuine
+    404 responder rather than a catch-all answering 200 for every path.
+x-evidence:
+  fetched: '2026-08-23'
+  hosts_probed:
+  - www.sail.bio
+  - sail.bio
+  contract_discovery:
+  - url: https://www.sail.bio/openapi.json
+    status: 404
+  - url: https://www.sail.bio/openapi.yaml
+    status: 404
+  - url: https://www.sail.bio/swagger.json
+    status: 404
+  - url: https://www.sail.bio/v1/openapi.json
+    status: 404
+  - url: https://www.sail.bio/api-docs
+    status: 404
+  - url: https://www.sail.bio/docs
+    status: 404
+  - url: https://www.sail.bio/redoc
+    status: 404
+  - url: https://www.sail.bio/graphql
+    status: 404
+  - url: https://www.sail.bio/llms.txt
+    status: 404
+  - url: https://www.sail.bio/robots.txt
+    status: 200
+  - url: https://www.sail.bio/sitemap_index.xml
+    status: 200
+  - url: https://www.sail.bio/wp-json/
+    status: 200
+    note: WordPress core REST API — CMS surface, not a published company API
+  subdomains_probed:
+    note: >-
+      api., docs., dev., developer., data., platform., mcp., app., portal., ir. and investors.
+      under sail.bio are all NXDOMAIN — there is no developer, documentation or API host.
+  legacy_domains:
+  - domain: laronde.bio
+    note: >-
+      The pre-merger Laronde domain still resolves (99.83.190.102, 75.2.70.75) and 301s HTTP to
+      HTTPS, but the TLS handshake fails with an internal error, so nothing is reachable.
+  - domain: laronde.com
+    note: >-
+      NOT this company — laronde.com serves a French-language WordPress site belonging to an
+      unrelated business. Excluded from every probe on ownership grounds.
+  - domain: sailbio.com
+    status: 200
+    note: >-
+      Registered 2021-03-15 behind Domains By Proxy and serving a GoDaddy parking lander
+      (/lander). Ownership is not established and the company's own site links only to sail.bio,
+      so it is recorded but not treated as a company host.

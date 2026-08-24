@@ -1,0 +1,18 @@
+generated: '2026-08-23'
+method: searched
+source: https://www.sail.bio/
+package_count: 0
+packages: []
+note: >-
+  No first-party client library, SDK or CLI exists for Sail Biomedicines (the company behind this
+  profile's legacy `laronde` slug), because the company publishes no API to wrap. Searched
+  2026-08-23 for "sail-biomedicines", "sailbio" and "laronde" on registry.npmjs.org (npm search
+  returned 0 results for "sailbio" and "laronde"; the 201 hits for "sail-biomedicines" are
+  unrelated projects — @sail.money/sailor, @computesdk/sail, sails-env-switch, @saberhq/sail,
+  @nauticana/sail), pypi.org (404 on all three), rubygems.org (404 on all three) and crates.io
+  (0 crates on all three). No GitHub organization belonging to the company was established:
+  github.com/sailbiomedicines and github.com/sailbio exist as empty organizations with zero
+  public repositories, no name, no website and no other metadata tying them to Sail Biomedicines,
+  and github.com/laronde is an unrelated individual user account — none of the three is claimed
+  here, and no GitHubOrganization pointer is wired. No SecondaryMarket-listed, CDN-distributed or
+  unpinned script-tag distribution exists either, so there is no version or publish date to record.
