@@ -54,7 +54,7 @@ tags:
 - RNA
 - Circular RNA
 - Cell Therapy
-- Cart
+- CAR-T
 - Nanoparticles
 - Drug Discovery
 - Immunology
@@ -155,3 +155,5 @@ x-coverage:
   - url: https://pypi.org/pypi/sailbio/json
     status: 404
   checked: '2026-08-23'
+x-tags-removed:
+- Cart
