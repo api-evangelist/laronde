@@ -64,48 +64,94 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Sail Biomedicines is a Cambridge, Massachusetts preclinical biotechnology company formed in
-October 2023, when Flagship Pioneering merged **Laronde** (the legacy slug this repository is
-filed under) and **Senda Biosciences**. It combines Laronde's Endless RNA (eRNA) circular-RNA
-platform with Senda's programmable nanoparticle delivery chemistry and applies generative AI to
-the combined dataset, targeting in vivo CAR-T for autoimmune disease. In July 2026 Johnson &
-Johnson committed $785M up front plus up to $140M in milestones and took an exclusive option to
-acquire the company for a further $2.58B.
+Sail Biomedicines is a Cambridge, Massachusetts preclinical biotechnology company created in October 2023 by Flagship Pioneering through the merger of Laronde and Senda Biosciences, and it is the company this profile's legacy `laronde` slug refers to. Sail combines Laronde's Endless RNA (eRNA) platform — synthetic circular RNA engineered to be translated persistently inside the body — with Senda's programmable lipid and natural nanoparticle delivery chemistry, and layers generative AI on the combined dataset to design what the company calls fully programmable medicines. Its lead effort is in vivo CAR-T for autoimmune disease: instructing a patient's own T cells to reprogram themselves inside the body rather than extracting, engineering and reinfusing them, an approach Sail markets as "immune reset". In July 2026 Johnson & Johnson committed $785 million up front (including a $465 million equity investment) plus up to $140 million in milestones and took an exclusive option to acquire the company for a further $2.58 billion. Sail sells therapeutics, not software: it publishes no API, no SDK, no machine-readable specification and no developer documentation, and it operates no public source-code organization.
 
-## No API surface
+**Areas:** Company · Biotechnology · Pharmaceuticals · RNA · Circular RNA · Cell Therapy · CAR-T · Nanoparticles · Drug Discovery · Immunology · Autoimmune Disease · Life Sciences
 
-Sail Biomedicines sells therapeutics, not software. Probed 2026-08-23, it publishes no API, no
-SDK, no developer portal and no machine-readable specification:
+## Sail Biomedicines on APIs.io
 
-- `www.sail.bio` is a 14-page WordPress marketing site on WP Engine. Every contract-discovery path
-  — `/openapi.json`, `/openapi.yaml`, `/swagger.json`, `/v1/openapi.json`, `/api-docs`, `/docs`,
-  `/redoc`, `/graphql`, `/llms.txt` — returns 404, as does every `/.well-known/` path including
-  `agent-card.json` and `agent.json`. A random control path under `/.well-known/` returns the same
-  404, so the host is not a soft-200 catch-all.
-- `api.`, `docs.`, `dev.`, `developer.`, `data.`, `platform.`, `mcp.`, `app.`, `portal.`, `ir.` and
-  `investors.sail.bio` are all NXDOMAIN.
-- No first-party package exists on npm, PyPI, RubyGems or crates.io, and no GitHub organization
-  was tied to the company.
-- The one machine-readable surface on the domain is the stock WordPress core REST API at
-  `/wp-json/` — the CMS behind a marketing site, not a product API, and not catalogued as a
-  contract here.
+Everything profiled for Sail Biomedicines is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/laronde/](https://apis.io/providers/laronde/)** — or go straight to one of the APIs or properties below.
 
-Two neighbouring domains are recorded but excluded: `laronde.bio` (the pre-merger domain — still
-resolves, but the TLS handshake fails) and `laronde.com` (a French-language site belonging to an
-unrelated business).
+### Published properties
 
-## Artifacts
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Path | What it holds |
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Laronde Domain Security](https://apis.io/security/laronde/laronde-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Laronde Plans Pricing](https://apis.io/plans/laronde/laronde-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Laronde Rate Limits](https://apis.io/rate-limits/laronde/laronde-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.sail.bio/)
+- [Blog](https://www.sail.bio/news/)
+- [Terms of service](https://www.sail.bio/terms-of-service/)
+- [Privacy policy](https://www.sail.bio/privacy-policy/)
+
+## API Evangelist rating
+
+**Kin Score 9.4** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
 |---|---|
-| `apis.yml` | APIs.json profile — identity, tags, links, coverage |
-| `well-known/laronde-well-known.yml` | `/.well-known/` probe record (all misses) |
-| `security/laronde-domain-security.yml` | TLS / HSTS / DNSSEC / CAA / SPF / DMARC probe |
-| `packages/laronde-packages.yml` | Registry search — no first-party packages |
-| `plans/laronde-plans-pricing.yml` | No API plans published |
-| `rate-limits/laronde-rate-limits.yml` | No API rate limits published |
-| `llms/laronde-llms.txt` | Generated `llms.txt` profile (not published by the company) |
+| Discoverability | 50.0 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 2.4 |
+| Access clarity | 21.1 |
 
-- Website: https://www.sail.bio/
-- Flagship Pioneering profile: https://www.flagshippioneering.com/companies/sail-biomedicines
-- Secondary-market listing this entry was harvested from: https://forgeglobal.com/laronde_stock/
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.3** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/laronde/](https://apis.io/providers/laronde/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Sail Biomedicines: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/laronde/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
